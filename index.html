@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Crea Articolo</h1>
+        <form id="article-form">
+            <label for="title">Titolo</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="paragraph">Paragrafo</label>
+            <textarea id="paragraph" name="paragraph" rows="4" required></textarea>
+
+            <button type="button" onclick="createArticle()">Crea Articolo</button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
