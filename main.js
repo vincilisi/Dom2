@@ -1,30 +1,28 @@
-function createArticle() {
-    const titleInput = document.getElementById('title');
-    const paragraphInput = document.getElementById('paragraph');
+let titolo  = document.querySelector('input');
+let descrizione = document.querySelector('textarea');
+let btn = document.querySelector('button');
+let conteiner = document.querySelector('.container')
 
-    const title = titleInput.value;
-    const paragraph = paragraphInput.value;
 
-    if (!title || !paragraph) {
-        alert('Titolo e paragrafo sono obbligatori!');
-        return;
-    }
 
-    const date = new Date();
-    const formatDate = date.toLocaleDateString();
+btn.addEventListener('click', ()=>{
+    let date = new Date()
+    let formatDate = date.toLocaleDateString()
 
-    const article = `
-        <article>
-            <h2>${title}</h2>
-            <p>${paragraph}</p>
-            <p>Data di pubblicazione: ${formatDate}</p>
-        </article>
-    `;
 
-    // Aggiungi l'articolo alla pagina o invialo al server, a seconda delle tue esigenze
-    console.log(article);
 
-    // Pulisci gli input
-    titleInput.value = '';
-    paragraphInput.value = '';
-}
+
+    if(titolo.value == '' && descrizione.value == ''){
+        alert('I capi sono vuoi')
+        }else{
+            let div = document.createElement('div')
+            div.style.backgroundColor='#0d0d';
+            div.style.padding= '20px'
+            div.style.marginTop='20px'
+            div.style.border='2.5px solid black'
+;            div.innerHTML = '<h2>' + titolo.value + '</h2>' + '<p>'+ descrizione.value+ '</p>' + '<i>'+formatDate+'</i>'
+            conteiner.appendChild(div)
+            titolo.value= ''
+            descrizione.value=''
+        }
+})
